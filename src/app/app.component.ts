@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-root',
-    template : '<h1>{{ title }}</h1>',
-    styles : [ 'h1{ color: #FF00FF; }' ]
+    template : require('raw-loader!./app.component.html'),
+    styles : [ require('raw-loader!./app.component.css') ]
 })
 export class AppComponent implements OnInit {
     
