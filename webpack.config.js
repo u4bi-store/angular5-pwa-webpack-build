@@ -1,5 +1,6 @@
-const path    = require('path'),
-      webpack = require('webpack');
+const path        = require('path'),
+      webpack     = require('webpack');
+      HtmlWebpack = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -18,6 +19,10 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.ContextReplacementPlugin(/\@angular(\\|\/)core(\\|\/)esm5/, path.join(__dirname, './src'))
+        new webpack.ContextReplacementPlugin(/\@angular(\\|\/)core(\\|\/)esm5/, path.join(__dirname, './src')),
+        new HtmlWebpack({
+            template: './src/index.html',
+            inject: false
+        })
     ]
 }
