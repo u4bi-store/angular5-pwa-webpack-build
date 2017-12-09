@@ -12,10 +12,21 @@ module.exports = {
         filename: '[name].js',
         path : path.resolve(__dirname, 'dist')
     },
+    // devtool: 'inline-source-map',    
     resolve: { extensions: ['.ts', '.js'] },
     module: {
         rules: [
-            { test: /\.ts$/, loader: 'ts-loader' }
+            {
+                test: /\.ts$/,
+                use: [
+                    {
+                        loader: 'ts-loader',
+                        options: { transpileOnly: true }
+                    },
+                    'angular2-template-loader'
+                ]
+            },
+            { test: /\.(css|html)$/, loader: 'raw-loader' }
         ]
     },
     plugins: [
