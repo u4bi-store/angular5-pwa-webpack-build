@@ -31,6 +31,10 @@ module.exports = {
     },
     plugins: [
         new webpack.ContextReplacementPlugin(/\@angular(\\|\/)core(\\|\/)esm5/, path.join(__dirname, './src')),
+        new webpack.optimize.UglifyJsPlugin({
+            parallel: true,
+            output: { comments: false },
+        }),
         new HtmlWebpack({
             template: './src/index.html',
             inject: false
