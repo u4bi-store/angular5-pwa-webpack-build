@@ -1,0 +1,12 @@
+{
+  "name": "angular5-webpack-product-build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "u4bi <rootcode10@gmail.com> (https://github.com/u4bi)",
+  "license": "MIT"
+}
