@@ -22,6 +22,8 @@
     "zone.js": "^0.8.18"
   },
   "devDependencies": {
+    "@types/node": "^8.0.57",
+    "typescript": "^2.6.2",
     "webpack": "^3.10.0"
   }
 }
