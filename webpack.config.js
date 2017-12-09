@@ -26,7 +26,11 @@ module.exports = {
                     'angular2-template-loader'
                 ]
             },
-            { test: /\.(css|html)$/, loader: 'raw-loader' }
+            { test: /\.(css|html)$/, loader: 'raw-loader' },
+            {
+                test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+                loader: 'file-loader?name=assets/[name].[ext]'
+            }
         ]
     },
     plugins: [

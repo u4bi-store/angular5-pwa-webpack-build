@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
     
-    public title : string = 'u4bi app';
+    public avatar : string = require('../assets/u4bi.png');
+    public title  : string = 'u4bi app';
 
     constructor(){
 
