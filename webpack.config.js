@@ -2,6 +2,8 @@ const path        = require('path'),
       webpack     = require('webpack');
       HtmlWebpack = require('html-webpack-plugin');
 
+const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
+
 module.exports = {
     entry: {
         polyfills : './src/polyfills.ts',
@@ -23,7 +25,8 @@ module.exports = {
                         loader: 'ts-loader',
                         options: { transpileOnly: true }
                     },
-                    'angular2-template-loader'
+                    'angular2-template-loader',
+                    '@ngtools/webpack'
                 ]
             },
             { test: /\.(css|html)$/, loader: 'raw-loader' },
@@ -42,6 +45,11 @@ module.exports = {
         new HtmlWebpack({
             template: './src/index.html',
             inject: false
+        }),
+        new AngularCompilerPlugin({
+            tsConfigPath: './tsconfig.json',
+            entryModule: './src/app/app.module#AppModule',
+            sourceMap: true
         })
     ]
 }
