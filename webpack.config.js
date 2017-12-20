@@ -1,6 +1,7 @@
 const path        = require('path'),
       webpack     = require('webpack');
-      HtmlWebpack = require('html-webpack-plugin');
+      HtmlWebpack = require('html-webpack-plugin'),
+      WorkboxWebpack = require('workbox-webpack-plugin');      
 
 const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 
@@ -50,6 +51,11 @@ module.exports = {
             tsConfigPath: './tsconfig.json',
             entryModule: './src/app/app.module#AppModule',
             sourceMap: true
+        }),
+        new WorkboxWebpack({
+            globDirectory: './dist/',
+            globPatterns: ['**/*.{html,js,css,png}'],
+            swDest: './dist/service-worker.js'
         })
     ]
 }

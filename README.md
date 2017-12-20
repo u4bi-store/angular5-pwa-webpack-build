@@ -1,1 +1,1 @@
-> Demo : https://u4bi.github.io/angular5-aot-webpack-build/
+> Demo : https://u4bi-store.github.io/angular5-pwa-webpack-build/
